@@ -1,6 +1,6 @@
 package com.kube.restapp.RestApp.controller;
 
-import com.kube.restapp.RestApp.exceptions.EmployeeNotFoundException;
+import com.kube.restapp.RestApp.exceptions.CustomerNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ControllerAdvice
-class EmployeeNotFoundAdvice {
+class CustomerNotFoundAdvice {
 
   @ResponseBody
-  @ExceptionHandler(EmployeeNotFoundException.class)
+  @ExceptionHandler(CustomerNotFoundException.class)
   @ResponseStatus(HttpStatus.NOT_FOUND)
-  String employeeNotFoundHandler(EmployeeNotFoundException ex) {
+  String employeeNotFoundHandler(CustomerNotFoundException ex) {
     return ex.getMessage();
   }
 }
